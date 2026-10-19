@@ -1,0 +1,102 @@
+<Window x:Class="PGameLib.Views.AddEditGameWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:PGameLib.ViewModels"
+        Title="{Binding Title}"
+        d:DataContext="{d:DesignInstance vm:AddEditGameViewModel}"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        mc:Ignorable="d"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Width="560" SizeToContent="Height"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        Background="{StaticResource WindowBgBrush}"
+        FontFamily="{StaticResource UiFont}"
+        TextOptions.TextFormattingMode="Ideal"
+        UseLayoutRounding="True">
+
+    <Border Padding="22">
+        <StackPanel>
+            <TextBlock Text="{Binding Title}" Style="{StaticResource Heading}" Margin="0,0,0,2" />
+            <TextBlock Style="{StaticResource Subtle}" Margin="0,0,0,18"
+                       Text="Point the library at a game's launch file. Nothing is copied or moved." />
+
+            <!-- Name -->
+            <TextBlock Text="Name" Style="{StaticResource Subtle}" Margin="0,0,0,5" />
+            <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"
+                     Tag="e.g. Hollow Knight" Margin="0,0,0,14" />
+
+            <!-- Launch file -->
+            <TextBlock Text="Launch file (EXE, shortcut, BAT, CMD)" Style="{StaticResource Subtle}" Margin="0,0,0,5" />
+            <Grid Margin="0,0,0,14">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBox Grid.Column="0" Text="{Binding LaunchPath, UpdateSourceTrigger=PropertyChanged}"
+                         Tag="Choose the game's main executable…" />
+                <Button Grid.Column="1" Content="Browse…" Style="{StaticResource BaseButton}"
+                        Command="{Binding BrowseLaunchFileCommand}" Margin="8,0,0,0" />
+            </Grid>
+
+            <!-- Install folder -->
+            <TextBlock Text="Installation folder" Style="{StaticResource Subtle}" Margin="0,0,0,5" />
+            <Grid Margin="0,0,0,14">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBox Grid.Column="0" Text="{Binding InstallFolder, UpdateSourceTrigger=PropertyChanged}"
+                         Tag="Detected automatically from the launch file" />
+                <Button Grid.Column="1" Content="Browse…" Style="{StaticResource BaseButton}"
+                        Command="{Binding BrowseInstallFolderCommand}" Margin="8,0,0,0" />
+            </Grid>
+
+            <Grid Margin="0,0,0,14">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="14" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0">
+                    <TextBlock Text="Source" Style="{StaticResource Subtle}" Margin="0,0,0,5" />
+                    <ComboBox ItemsSource="{Binding Sources}" SelectedItem="{Binding SelectedSource}" />
+                </StackPanel>
+                <StackPanel Grid.Column="2">
+                    <TextBlock Text="Launch arguments (optional)" Style="{StaticResource Subtle}" Margin="0,0,0,5" />
+                    <TextBox Text="{Binding LaunchArguments, UpdateSourceTrigger=PropertyChanged}"
+                             Tag="e.g. -windowed -skipintro" />
+                </StackPanel>
+            </Grid>
+
+            <!-- Working dir -->
+            <TextBlock Text="Working directory (optional)" Style="{StaticResource Subtle}" Margin="0,0,0,5" />
+            <TextBox Text="{Binding WorkingDirectory, UpdateSourceTrigger=PropertyChanged}"
+                     Tag="Leave empty to use the installation folder" Margin="0,0,0,14" />
+
+            <!-- Cover image -->
+            <TextBlock Text="Cover image (optional)" Style="{StaticResource Subtle}" Margin="0,0,0,5" />
+            <Grid Margin="0,0,0,8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBox Grid.Column="0" Text="{Binding CoverImagePath, UpdateSourceTrigger=PropertyChanged}"
+                         Tag="Uses the extracted icon when empty" />
+                <Button Grid.Column="1" Content="Browse…" Style="{StaticResource BaseButton}"
+                        Command="{Binding BrowseCoverImageCommand}" Margin="8,0,0,0" />
+                <Button Grid.Column="2" Content="Clear" Style="{StaticResource GhostButton}"
+                        Command="{Binding ClearCoverImageCommand}" Margin="8,0,0,0" />
+            </Grid>
+
+            <!-- Actions -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,16,0,0">
+                <Button Content="Cancel" Style="{StaticResource GhostButton}"
+                        Command="{Binding CancelCommand}" MinWidth="96" Margin="0,0,10,0" />
+                <Button Content="Save" Style="{StaticResource AccentButton}"
+                        Command="{Binding SaveCommand}" MinWidth="110" />
+            </StackPanel>
+        </StackPanel>
+    </Border>
+</Window>

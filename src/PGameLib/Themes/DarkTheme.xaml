@@ -1,0 +1,66 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- ============================================================
+         Palette.  A dark, slightly blue-grey base with a violet accent.
+         Kept as Colors (for gradients/animation) and Brushes (for binding).
+         ============================================================ -->
+
+    <Color x:Key="WindowBgColor">#15171E</Color>
+    <Color x:Key="SidebarBgColor">#0F1116</Color>
+    <Color x:Key="PanelBgColor">#1A1D25</Color>
+    <Color x:Key="CardBgColor">#1C1F27</Color>
+    <Color x:Key="CardHoverColor">#242836</Color>
+    <Color x:Key="CardSelectedColor">#2A2F40</Color>
+    <Color x:Key="InputBgColor">#12141A</Color>
+    <Color x:Key="BorderColor">#2A2E3A</Color>
+    <Color x:Key="BorderStrongColor">#3A4150</Color>
+
+    <Color x:Key="TextPrimaryColor">#E8EAF0</Color>
+    <Color x:Key="TextSecondaryColor">#9AA0AE</Color>
+    <Color x:Key="TextMutedColor">#6B7280</Color>
+
+    <Color x:Key="AccentColor">#7C5CFF</Color>
+    <Color x:Key="AccentHoverColor">#8E72FF</Color>
+    <Color x:Key="AccentPressedColor">#6A4BE0</Color>
+
+    <Color x:Key="PlayColor">#35C27A</Color>
+    <Color x:Key="PlayHoverColor">#43D389</Color>
+    <Color x:Key="PlayPressedColor">#2BA668</Color>
+
+    <Color x:Key="DangerColor">#E5484D</Color>
+    <Color x:Key="WarnColor">#E5A33B</Color>
+
+    <SolidColorBrush x:Key="WindowBgBrush" Color="{StaticResource WindowBgColor}" />
+    <SolidColorBrush x:Key="SidebarBgBrush" Color="{StaticResource SidebarBgColor}" />
+    <SolidColorBrush x:Key="PanelBgBrush" Color="{StaticResource PanelBgColor}" />
+    <SolidColorBrush x:Key="CardBgBrush" Color="{StaticResource CardBgColor}" />
+    <SolidColorBrush x:Key="CardHoverBrush" Color="{StaticResource CardHoverColor}" />
+    <SolidColorBrush x:Key="CardSelectedBrush" Color="{StaticResource CardSelectedColor}" />
+    <SolidColorBrush x:Key="InputBgBrush" Color="{StaticResource InputBgColor}" />
+    <SolidColorBrush x:Key="BorderBrush" Color="{StaticResource BorderColor}" />
+    <SolidColorBrush x:Key="BorderStrongBrush" Color="{StaticResource BorderStrongColor}" />
+
+    <SolidColorBrush x:Key="TextPrimaryBrush" Color="{StaticResource TextPrimaryColor}" />
+    <SolidColorBrush x:Key="TextSecondaryBrush" Color="{StaticResource TextSecondaryColor}" />
+    <SolidColorBrush x:Key="TextMutedBrush" Color="{StaticResource TextMutedColor}" />
+
+    <SolidColorBrush x:Key="AccentBrush" Color="{StaticResource AccentColor}" />
+    <SolidColorBrush x:Key="AccentHoverBrush" Color="{StaticResource AccentHoverColor}" />
+    <SolidColorBrush x:Key="AccentPressedBrush" Color="{StaticResource AccentPressedColor}" />
+
+    <SolidColorBrush x:Key="PlayBrush" Color="{StaticResource PlayColor}" />
+    <SolidColorBrush x:Key="PlayHoverBrush" Color="{StaticResource PlayHoverColor}" />
+    <SolidColorBrush x:Key="PlayPressedBrush" Color="{StaticResource PlayPressedColor}" />
+
+    <SolidColorBrush x:Key="DangerBrush" Color="{StaticResource DangerColor}" />
+    <SolidColorBrush x:Key="WarnBrush" Color="{StaticResource WarnColor}" />
+
+    <!-- Shared metrics -->
+    <CornerRadius x:Key="CardRadius">12</CornerRadius>
+    <CornerRadius x:Key="ControlRadius">8</CornerRadius>
+    <CornerRadius x:Key="PillRadius">6</CornerRadius>
+
+    <FontFamily x:Key="UiFont">Segoe UI Variable Text, Segoe UI, Arial</FontFamily>
+
+</ResourceDictionary>

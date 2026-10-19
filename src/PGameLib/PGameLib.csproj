@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <RootNamespace>PGameLib</RootNamespace>
+    <AssemblyName>PGameLib</AssemblyName>
+    <Version>1.0.0</Version>
+    <AssemblyTitle>PGameLib</AssemblyTitle>
+    <Product>PGameLib</Product>
+    <Company>PGameLib</Company>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Assets\app.ico</ApplicationIcon>
+    <!-- COM interop for IShellLink / Shell icon extraction -->
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- No third-party NuGet packages: everything uses the BCL + Windows interop,
+         so 'dotnet restore' needs nothing beyond the Windows Desktop SDK. -->
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Assets\app.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
