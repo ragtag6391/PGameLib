@@ -5,6 +5,8 @@ one place and launches any of them with a single click. It stores **information 
 games — name, launch file, folder, size, icon — and never copies, moves, renames, or deletes the
 actual game files.
 
+**This supports Pirated games**
+
 Built with **C# / WPF on .NET 9** using the MVVM pattern. No online account, no cloud, no
 telemetry. Everything stays on your PC.
 
